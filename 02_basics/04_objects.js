@@ -32,3 +32,16 @@ const objCobined2 = { ...regularUser, ...tinderUser};
 
 // console.log(tinderUser.hasOwnProperty("email"));
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// object destructure:
+const course = {
+    courseName: "js hindi",
+    courseFee: "999",
+    courseInstructor: "hitesh"
+}
+
+const {courseName, courseFee, courseInstructor: instructor} = course; //destructuring course object.
+
+console.log(instructor);
+console.log(courseName);
