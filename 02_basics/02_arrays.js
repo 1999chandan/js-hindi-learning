@@ -20,6 +20,13 @@ const dcHeros = ["Super Man", "Bat Man", "flash"];
 // const flatArry = ArrInsideArr.flat(4); // this will spread all array in one 
 // console.log(flatArry);
 
-//conver to array:
+//convert to array:
 console.log(Array.from("ChandanPriyankaVishwakarma"));
 console.log(Array.from({name:"priyanka"})); //intersting
+
+
+let score1 = 299;
+let score2 = 199;
+let score3 = 200;
+
+console.log(Array.of(score1,score2,score3));
