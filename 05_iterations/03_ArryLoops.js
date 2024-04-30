@@ -33,3 +33,83 @@ map.set('Aus', "Austreliya");
 // for (const [key, value] of map) { // it will destructure array of key and value and we can use key and value saparately.
 //     console.log(`key of map: ${key} $ value of map: ${value}`);
 // }
+
+// for of loop will not work for object
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// for in loop:
+// using in object: 
+
+// const myObj = {
+//     name: "chandan",
+//     empId: 12345,
+//     email: "chan@gmail.com",
+//     location: "India"
+// };
+
+// for (const key in myObj) {
+//     console.log(`${key} = ${myObj[key]} `);
+// }
+
+// using in array:
+
+// const myArr1 = ["priyanka", "chandan", "santosh", "sushma", "vasu", "badal"];
+
+// for (const key in myArr1) {
+//     console.log(myArr1[key]);
+// }
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// foreach loop: it does not return any value
+
+const coding = ["js", "java", "C++", "kotlin", "python"];
+
+// foreach loop using a call back function 
+  //errow function as call back:
+// coding.forEach((item)=>{
+// console.log(item);
+// });
+  
+  // normal function as call back:
+
+// coding.forEach(function (params) { //callback function don't need name
+//     console.log(item);
+// } );
+
+ // defining a function other place and using reference in the forEach loop:
+
+// function callBack(item) {
+//     console.log(item);
+// };
+
+// coding.forEach(callBack);
+
+// parameter we can use in callback function:
+
+// coding.forEach((eachItem, index, completeArr)=>{
+//     console.log(eachItem, index, completeArr);
+// });
+
+// one more scenario: 
+// in case we have object inside array:
+
+// const ArrayItemObj = [
+//     {
+//         name: "chandan",
+//         age: 25
+//     },
+//     {
+//         name: "vasu",
+//         age: 23
+//     },
+//     {
+//         name: "badal",
+//         age: 22
+//     }
+// ];
+
+// ArrayItemObj.forEach((itemObj)=>{
+//     console.log(`name: ${itemObj.name} and age: ${itemObj.age}`);
+// });
