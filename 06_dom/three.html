@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai Our Code</title>
+</head>
+<body  style="background-color: #212121; color: #ffffff;">
+    <button id="btn" onclick="generate()">Show family</button>
+    <button id="btn" onclick="remove()">hide family</button>
+</body>
+<script>
+    const colorArr = ["green", "red", "blue", "orange", "#249acc", "#3cbfa2"];
+    const textArr = [ "Santosh", "Sushma","priyanka", "Chandan", "vasu", "badal"];
+
+    function generateDiv(arr, textArr) {
+       const createdDiv = arr.map((element, index) => {
+            const divVar = document.createElement('div');
+            divVar.className = 'main';
+            divVar.id = index+1;
+            divVar.setAttribute("Title", "generated title");
+            divVar.style.background = element;
+            divVar.style.padding = "12px";
+            const addText = document.createTextNode(textArr[index]);
+            divVar.appendChild(addText);
+            document.body.appendChild(divVar);
+            return divVar
+        });
+            
+            //divVar.innerText = "chai our code";
+            // const addText = document.createTextNode("Chai our code");
+            // divVar.appendChild(addText);
+            // document.body.appendChild(divVar);
+
+        }
+    function generate() {
+    generateDiv(colorArr, textArr);
+        
+    };
+    function remove() {
+        const element = document.querySelectorAll('.main');
+        element.forEach((item)=>{
+            document.body.removeChild(item);
+        })
+        // document.body.removeChild(element);
+    }
+    
+</script>
+</html>

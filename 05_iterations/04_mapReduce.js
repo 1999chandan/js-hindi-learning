@@ -30,11 +30,12 @@ const myNums = [1,2,3,4,5,6,7,8,9,10];
 
 //IMPORTANT: REDUCE:
 
-const arr1 = [1,2,3];
-const initialVal = 4;
-const newArr1= arr1.reduce((acc, currVal)=>{
-    console.log(`acc: ${acc}, currVal: ${currVal}`);
-    return acc + currVal
-}, initialVal);
+// const arr1 = [1,2,3];
+// const initialVal = 4;
+// const newArr1= arr1.reduce((acc, currVal)=>{
+//     console.log(`acc: ${acc}, currVal: ${currVal}`);
+//     return acc + currVal
+// }, initialVal);
 
-console.log(newArr1);
+// console.log(newArr1);
+

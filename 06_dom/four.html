@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai our code | four</title>
+</head>
+<body style="background-color: #212121; color: #ffffff;">
+    <input type="text" name="text" id="lang" placeholder="add language">
+    <button class="btn" onclick="AddLanguage(document.getElementById('lang').value)">add</button>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function AddLanguage(lanName) {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `${lanName}`;
+        document.querySelector(".language").appendChild(listItem);
+        
+        document.getElementById('lang').value = '';
+    }
+
+</script>
+</html>
