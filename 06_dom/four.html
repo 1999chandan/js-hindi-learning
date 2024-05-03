@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: #212121; color: #ffffff;">
     <input type="text" name="text" id="lang" placeholder="add language">
-    <button class="btn" onclick="AddLanguage(document.getElementById('lang').value)">add</button>
+    <button class="btn" onclick="addOptiLanguage(document.getElementById('lang').value)">add</button>
     <ul class="language">
         <li>javascript</li>
     </ul>
@@ -15,9 +15,15 @@
 <script>
     function AddLanguage(lanName) {
         const listItem = document.createElement("li");
-        listItem.innerHTML = `${lanName}`;
-        document.querySelector(".language").appendChild(listItem);
+        listItem.innerHTML = `${lanName}`; // innerHTML is not an optimize way because we have to traverse complete tree structure to find the element to add value.      document.querySelector(".language").appendChild(listItem);
         
+        document.getElementById('lang').value = '';
+    }
+
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName)); // this is an optimized way (appendChile())
+        document.querySelector('.language').appendChild(li);
         document.getElementById('lang').value = '';
     }
 
