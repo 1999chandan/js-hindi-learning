@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events | three</title>
+</head>
+<body>
+    <h1>Chai our chandan</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    // setInterval(function(str){
+    //     //console.log(Date.now());
+    //     console.log(str, Date.now());
+    // }, 2000, 'hello');
+
+    const sayDate = function(p){
+        // Date.now();
+        p.innerHTML = `Date: ${Date.now()}`;
+    }
+    let interval;
+
+    //
+
+    document.querySelector('#start').addEventListener('click', ()=>{
+        let p = document.createElement('p');
+        
+        document.querySelector('h1').appendChild(p);
+        
+        interval = setInterval(sayDate,2000, p);
+        console.log(interval);
+    }, false);
+
+    document.querySelector('#stop').addEventListener('click', ()=>{
+        clearInterval(interval);
+        document.querySelector('p').remove();
+    }, false);
+
+</script>
+</html>

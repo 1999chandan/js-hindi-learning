@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: blanchedalmond;">
+    <ul id="images">
+        <li id="owl">owl</li>
+        <li id="photoshop"> photo</li>
+        <li id="chandan">chandan</li>
+        <li id="priyanka">priyanka</li>
+    </ul>
+</body>
+<script>
+    //  document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked");
+    //  }
+
+    //best approach:
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('clicked inside UL')
+    //     //console.log(e);
+    // }, false)  // default value of event propogation : false
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('clicked owl')
+    //     e.stopPropagation();
+
+    //     //console.log(e);
+    // }, false)
+    // need to study:
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY,
+    // altKey, ctrlKey, shiftkey, keycode
+    document.querySelector('#images').addEventListener('click', function(e){
+        //console.log(e.target.parentNode);// it will select the parent node of the clicked element.
+        //console.log(e.target.tagName);
+        if(e.target.tagName === 'LI'){
+            let removeIt = e.target;
+            removeIt.remove();
+        }
+        // let removeIt = e.target;
+        // removeIt.remove();
+
+    }, false)
+
+</script>
+</html>
