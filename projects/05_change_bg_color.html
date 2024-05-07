@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Change | Color</title>
 </head>
-<body>
-    
+<body style="background-color: #212121; color: #ffffff;">
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
 </body>
+<script>
+    let colorCode;
+    const bodyStyle = document.querySelector('body').style;
+    function randomColor() {
+        const range = '123456789ABCDEF';
+        let hexCode ='#';
+        for (let i = 0; i <6; i++) {
+            const randomNumber = Math.floor(Math.random()*15);
+            hexCode += range[randomNumber];
+             
+        }
+        //console.log(hexCode);
+        bodyStyle.backgroundColor=`${hexCode}`
+    }
+
+    document.querySelector('#start').addEventListener('click', ()=>{
+        if(!colorCode){
+            colorCode = setInterval(randomColor, 1000);
+        }
+    })
+
+    document.querySelector('#stop').addEventListener('click', ()=>{
+        clearInterval(colorCode);
+        bodyStyle.backgroundColor=`#212121`;
+        colorCode = null;
+    }, false);
+    //randomColor();
+    
+</script>
 </html>
